@@ -3,10 +3,36 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-
     <groupId>com.person</groupId>
     <artifactId>second-shop</artifactId>
+    <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
-
-
+    <modules>
+        <module>second-shop-commons</module>
+        <module>second-shop-api</module>
+    </modules>
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.2.2.RELEASE</version>
+    </parent>
+    <!-- 设定主仓库，按设定顺序进行查找。 -->
+    <repositories>
+        <repository>
+            <id>public</id>
+            <name>aliyunNexus</name>
+            <url>http://maven.aliyun.com/nexus/content/groups/public</url>
+            <layout>central</layout>
+        </repository>
+        <!--  -->
+    </repositories>
+    <!-- 设定插件仓库 -->
+    <pluginRepositories>
+        <pluginRepository>
+            <id>public</id>
+            <name>aliyunNexus</name>
+            <url>http://maven.aliyun.com/nexus/content/groups/public</url>
+            <layout>central</layout>
+        </pluginRepository>
+    </pluginRepositories>
 </project>
