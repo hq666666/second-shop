@@ -1,0 +1,19 @@
+dataSources:
+  names: db_master,db_slave
+  #主节点配置
+  db_master:
+    type: com.zaxxer.hikari.HkariDataSource
+    driverClassName: com.mysql.cj.jdbc.Driver
+    jdbcUrl: jdbc:mysql://192.168.92.201:3306/shop_pms?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=GMT%2B8
+    username: root
+    password: 123456
+  #从节点配置
+  db_slave: !!com.zaxxer.hikari.HikariDataSource
+    driverClassName: com.mysql.cj.jdbc.Driver
+    jdbcUrl: jdbc:mysql://192.168.159.130:3316/gmall_ums?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=GMT%2B8
+    username: root
+    password: 123456
+masterSlaveRule:
+  name: db_ms
+  masterDataSourceName: db_master
+  slaveDataSourceNames: [db_slave]

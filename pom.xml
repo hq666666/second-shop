@@ -10,11 +10,13 @@
     <modules>
         <module>second-shop-commons</module>
         <module>second-shop-api</module>
+        <module>second-shop-mbg</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
         <version>2.2.2.RELEASE</version>
+        <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <!-- 设定主仓库，按设定顺序进行查找。 -->
     <repositories>
